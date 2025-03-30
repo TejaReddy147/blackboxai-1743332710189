@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aframe-extras@6.1.1/dist/aframe-extras.min.js"></script>
+    <title>Chemistry Virtual Lab</title>
+</head>
+<body>
+    <a-scene>
+        <!-- Progress Tracking -->
+        <a-entity position="0 2.5 -3">
+            <a-text class="progress-indicator" 
+                   value="Progress: 0/4" 
+                   color="#FFF" 
+                   align="center" 
+                   width="3"></a-text>
+        </a-entity>
+
+        <!-- Lab Environment -->
+        <a-sky src="https://images.pexels.com/photos/123456/lab-background.jpg"></a-sky>
+        
+        <!-- Molecule Builder -->
+        <a-entity id="molecule-builder" position="0 1.5 -3">
+            <a-text value="Molecule Builder" position="0 0.5 0" color="#FFF" align="center"></a-text>
+            <a-entity class="atom" position="-1 0 0" geometry="primitive: sphere" material="color: #FF0000" 
+                     data-element="O" data-radius="0.5" draggable>
+                <a-text value="O" position="0 0 0.6" color="#FFF" align="center"></a-text>
+            </a-entity>
+            <a-entity class="atom" position="1 0 0" geometry="primitive: sphere" material="color: #0000FF" 
+                     data-element="H" data-radius="0.3" draggable>
+                <a-text value="H" position="0 0 0.4" color="#FFF" align="center"></a-text>
+            </a-entity>
+        </a-entity>
+
+        <!-- Complete Button -->
+        <a-entity position="0 1 -3">
+            <a-box color="#4CAF50" depth="0.5" height="0.3" width="1.5" 
+                  clickable onclick="completeExperiment('chemistry-molecule-builder')">
+                <a-text value="Complete" color="#FFF" position="0 0 0.3" align="center"></a-text>
+            </a-box>
+        </a-entity>
+
+        <!-- Controls -->
+        <a-entity camera look-controls wasd-controls></a-entity>
+        
+        <!-- Instructions -->
+        <a-entity position="0 2 -5">
+            <a-text value="Build molecules and complete experiments\nPress B to return to menu" 
+                   color="#FFF" align="center" width="5"></a-text>
+        </a-entity>
+    </a-scene>
+    <script>
+        function completeExperiment(experimentId) {
+            trackCompletion(experimentId);
+            document.querySelector('.progress-indicator').setAttribute('value', 
+                `Progress: ${progress.getProgress().completed}/${progress.getProgress().total}`);
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
