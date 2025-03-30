@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduGenie Study Materials</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <header class="bg-blue-500 text-white p-4">
+        <div class="flex justify-between items-center mb-4">
+            <h1 class="text-2xl">Study Materials</h1>
+            <div class="flex space-x-2">
+                <button onclick="toggleTheme()" class="bg-white text-blue-500 px-3 py-1 rounded">
+                    Toggle Theme
+                </button>
+                <button onclick="logout()" class="bg-red-500 text-white px-3 py-1 rounded">
+                    Logout
+                </button>
+            </div>
+        </div>
+        <nav class="flex space-x-4 overflow-x-auto pb-2">
+            <a href="student-dashboard.html" class="px-3 py-1 bg-blue-500 text-white rounded whitespace-nowrap">Dashboard</a>
+            <a href="video-lectures.html" class="px-3 py-1 bg-blue-500 text-white rounded whitespace-nowrap">Video Lectures</a>
+            <a href="live-classes.html" class="px-3 py-1 bg-blue-500 text-white rounded whitespace-nowrap">Live Classes</a>
+            <a href="practice-tests.html" class="px-3 py-1 bg-blue-500 text-white rounded whitespace-nowrap">Practice Tests</a>
+            <a href="study-materials.html" class="px-3 py-1 bg-blue-600 text-white rounded whitespace-nowrap">Study Materials</a>
+            <a href="forum.html" class="px-3 py-1 bg-blue-500 text-white rounded whitespace-nowrap">Forum</a>
+        </nav>
+    </header>
+
+    <main class="max-w-7xl mx-auto p-4">
+        <h2 class="text-xl font-bold mb-6">Available Study Materials</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Material 1 -->
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+                <div class="p-4">
+                    <h3 class="font-bold text-lg dark:text-white">Physics Notes</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Comprehensive notes on mechanics.</p>
+                    <a href="https://example.com/physics-notes.pdf" class="mt-2 inline-block bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition">
+                        Download
+                    </a>
+                </div>
+            </div>
+
+            <!-- Material 2 -->
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+                <div class="p-4">
+                    <h3 class="font-bold text-lg dark:text-white">Chemistry Lab Manual</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Essential experiments and procedures.</p>
+                    <a href="https://example.com/chemistry-lab-manual.pdf" class="mt-2 inline-block bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition">
+                        Download
+                    </a>
+                </div>
+            </div>
+
+            <!-- Material 3 -->
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+                <div class="p-4">
+                    <h3 class="font-bold text-lg dark:text-white">Math Formulas</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Key formulas for quick reference.</p>
+                    <a href="https://example.com/math-formulas.pdf" class="mt-2 inline-block bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition">
+                        Download
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="auth.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
