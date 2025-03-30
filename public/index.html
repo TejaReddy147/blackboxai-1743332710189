@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduGenie Virtual Learning Labs</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-particle-system-component@1.1.3/dist/aframe-particle-system-component.min.js"></script>
+</head>
+<body>
+    <header class="vibrant-bg text-white p-6 flex justify-between items-center relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full">
+            <div class="decorative-corner top-0 left-0"></div>
+            <div class="decorative-corner bottom-0 right-0 rotate-180"></div>
+        </div>
+        <h1 class="text-3xl font-bold relative z-10 flex items-center">
+            <span class="icon-pulse mr-2">✨</span>
+            EduGenie Virtual Learning Labs
+            <span class="icon-pulse ml-2">✨</span>
+        </h1>
+        <div class="flex items-center space-x-4">
+            <div class="progress-indicator bg-white text-blue-500 px-3 py-1 rounded-full">
+                0/4
+            </div>
+            <a href="teacher-portal.html" class="bg-white text-blue-500 px-3 py-1 rounded-full hover:bg-blue-100 transition">
+                Teacher Portal
+            </a>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto p-4">
+        <h2 class="text-2xl font-bold mb-6 text-center">EduGenie Virtual Learning Labs</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Great Wall Tour -->
+            <div class="bg-white rounded-xl shadow-xl p-6 hover:scale-105 transition-all duration-300 transform hover:rotate-1 relative overflow-hidden">
+                <div class="absolute -top-10 -right-10 w-32 h-32 bg-blue-200 rounded-full opacity-20"></div>
+                <div class="relative z-10">
+                    <div class="w-full h-48 mb-4 relative overflow-hidden rounded-xl">
+                        <img src="https://images.pexels.com/photos/123456/great-wall.jpg" 
+                             alt="Great Wall of China" 
+                             class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                            <h3 class="text-xl font-bold text-white">Great Wall of China</h3>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4 flex items-center">
+                        <span class="mr-2 text-blue-500">🏯</span>
+                        Explore this ancient wonder in VR
+                    </p>
+                    <button onclick="startVR('great-wall')" 
+                            class="w-full btn-3d bg-gradient-to-r from-blue-500 to-teal-500 text-white px-4 py-3 rounded-xl hover:from-blue-600 hover:to-teal-600 transition-all">
+                        <span class="flex items-center justify-center">
+                            Start VR Tour <span class="ml-2">🌏</span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Math Lab -->
+            <div class="math-theme bg-white rounded-xl shadow-xl p-6 hover:scale-105 transition-all duration-300 transform hover:rotate-1 relative overflow-hidden">
+                <div class="absolute -top-10 -right-10 w-32 h-32 bg-orange-200 rounded-full opacity-20"></div>
+                <div class="relative z-10">
+                    <div class="w-full h-48 mb-4 relative overflow-hidden rounded-xl">
+                        <img src="https://images.pexels.com/photos/123456/math-lab.jpg" 
+                             alt="Math Lab" 
+                             class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                            <h3 class="text-xl font-bold text-white">Interactive Math Lab</h3>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4 flex items-center">
+                        <span class="mr-2 text-orange-500">🧮</span>
+                        Explore 3D geometry and equations
+                    </p>
+                    <button onclick="startVR('math-lab')" 
+                            class="w-full btn-3d bg-gradient-to-r from-orange-500 to-yellow-500 text-white px-4 py-3 rounded-xl hover:from-orange-600 hover:to-yellow-600 transition-all">
+                        <span class="flex items-center justify-center">
+                            Enter Lab <span class="ml-2">📐</span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Physics Lab -->
+            <div class="physics-theme bg-white rounded-xl shadow-xl p-6 hover:scale-105 transition-all duration-300 transform hover:rotate-1 relative overflow-hidden">
+                <div class="absolute -top-10 -right-10 w-32 h-32 bg-blue-200 rounded-full opacity-20"></div>
+                <div class="relative z-10">
+                    <div class="w-full h-48 mb-4 relative overflow-hidden rounded-xl">
+                        <img src="https://images.pexels.com/photos/123456/physics-lab.jpg" 
+                             alt="Physics Lab" 
+                             class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                            <h3 class="text-xl font-bold text-white">Physics Lab</h3>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4 flex items-center">
+                        <span class="mr-2 text-blue-500">⚛️</span>
+                        Simulate experiments and solve equations
+                    </p>
+                    <button onclick="startVR('physics-lab')" 
+                            class="w-full btn-3d bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-4 py-3 rounded-xl hover:from-blue-600 hover:to-cyan-600 transition-all">
+                        <span class="flex items-center justify-center">
+                            Start Experiment <span class="ml-2">🔭</span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Chemistry Lab -->
+            <div class="chemistry-theme bg-white rounded-xl shadow-xl p-6 hover:scale-105 transition-all duration-300 transform hover:rotate-1 relative overflow-hidden">
+                <div class="absolute -top-10 -right-10 w-32 h-32 bg-purple-200 rounded-full opacity-20"></div>
+                <div class="relative z-10">
+                    <div class="w-full h-48 mb-4 relative overflow-hidden rounded-xl">
+                        <img src="https://images.pexels.com/photos/123456/chemistry-lab.jpg" 
+                             alt="Chemistry Lab" 
+                             class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                            <h3 class="text-xl font-bold text-white">Chemistry Lab</h3>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4 flex items-center">
+                        <span class="mr-2 text-purple-500">🧪</span>
+                        Build molecules and conduct experiments
+                    </p>
+                    <button onclick="startVR('chemistry-lab')" 
+                            class="w-full btn-3d bg-gradient-to-r from-purple-500 to-pink-500 text-white px-4 py-3 rounded-xl hover:from-purple-600 hover:to-pink-600 transition-all">
+                        <span class="flex items-center justify-center">
+                            Begin Lab Work <span class="ml-2">⚗️</span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Floating Decorations -->
+    <div class="fixed top-20 left-10 w-16 h-16 bg-yellow-400/20 rounded-full float animation-delay-100"></div>
+    <div class="fixed bottom-1/4 right-20 w-24 h-24 bg-blue-400/20 rounded-full float animation-delay-300"></div>
+    <div class="fixed top-1/3 right-1/4 w-20 h-20 bg-pink-400/20 rounded-full float animation-delay-500"></div>
+    <div class="fixed bottom-20 left-1/4 w-12 h-12 bg-green-400/20 rounded-full float animation-delay-700"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
