@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduGenie Student Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <script src="script.js"></script>
+</head>
+<body class="bg-gray-100">
+    <header class="bg-blue-500 text-white p-4">
+        <div class="flex justify-between items-center mb-4">
+            <h1 class="text-2xl">Student Dashboard</h1>
+            <div class="flex space-x-2">
+                <button onclick="toggleTheme()" class="bg-white text-blue-500 px-3 py-1 rounded">
+                    Toggle Theme
+                </button>
+                <button onclick="logout()" class="bg-red-500 text-white px-3 py-1 rounded">
+                    Logout
+                </button>
+            </div>
+        </div>
+        <nav class="flex space-x-4 overflow-x-auto pb-2">
+            <a href="student-dashboard.html" class="px-3 py-1 bg-white text-blue-500 rounded whitespace-nowrap">Dashboard</a>
+            <a href="video-lectures.html" class="px-3 py-1 bg-blue-600 text-white rounded whitespace-nowrap">Video Lectures</a>
+            <a href="live-classes.html" class="px-3 py-1 bg-blue-500 text-white rounded whitespace-nowrap">Live Classes</a>
+            <a href="practice-tests.html" class="px-3 py-1 bg-blue-500 text-white rounded whitespace-nowrap">Practice Tests</a>
+            <a href="study-materials.html" class="px-3 py-1 bg-blue-500 text-white rounded whitespace-nowrap">Study Materials</a>
+            <a href="forum.html" class="px-3 py-1 bg-blue-500 text-white rounded whitespace-nowrap">Forum</a>
+        </nav>
+    </header>
+    <main class="max-w-7xl mx-auto p-4">
+        <h2 class="text-xl font-bold mb-4">Your Progress</h2>
+        <div class="progress-bar bg-gray-200 rounded-full h-4 mb-4">
+            <div class="bg-green-500 h-4 rounded-full" style="width: 60%;"></div>
+        </div>
+        <h2 class="text-xl font-bold mb-4">Upcoming Tests</h2>
+        <ul class="list-disc pl-5">
+            <li>Math Test - Next Friday</li>
+            <li>Chemistry Lab - Next Monday</li>
+        </ul>
+        <h2 class="text-xl font-bold mb-4">Homework Helper</h2>
+        <textarea class="w-full h-24 p-2 border rounded" placeholder="Describe your homework..."></textarea>
+        <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition mt-2">
+            Get Help
+        </button>
+    </main>
+</body>
+</html>
