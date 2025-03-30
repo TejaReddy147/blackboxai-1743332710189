@@ -1,0 +1,149 @@
+/* Vibrant Color Palette */
+:root {
+  --primary: #6C63FF;
+  --secondary: #FF6584;
+  --accent: #FFC107;
+  --success: #4CAF50;
+  --info: #2196F3;
+  --warning: #FF9800;
+  --danger: #F44336;
+  --dark: #2D3748;
+  --light: #F7FAFC;
+}
+
+/* Animated Backgrounds */
+.vibrant-bg {
+  background: linear-gradient(135deg, 
+    var(--primary) 0%, 
+    var(--secondary) 50%, 
+    var(--accent) 100%);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50% }
+  50% { background-position: 100% 50% }
+  100% { background-position: 0% 50% }
+}
+
+/* 3D Buttons */
+.btn-3d {
+  position: relative;
+  box-shadow: 0 6px 0 0 rgba(0,0,0,0.2);
+  transition: all 0.1s ease;
+}
+
+.btn-3d:active {
+  transform: translateY(4px);
+  box-shadow: 0 2px 0 0 rgba(0,0,0,0.2);
+}
+
+/* Animated Icons */
+.icon-pulse {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1) }
+  50% { transform: scale(1.1) }
+  100% { transform: scale(1) }
+}
+
+/* Floating Elements */
+.float {
+  animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+  0% { transform: translateY(0px) }
+  50% { transform: translateY(-10px) }
+  100% { transform: translateY(0px) }
+}
+
+/* Glowing Effects */
+.glow {
+  box-shadow: 0 0 10px rgba(255,255,255,0.8);
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from { box-shadow: 0 0 5px rgba(255,255,255,0.5) }
+  to { box-shadow: 0 0 20px rgba(255,255,255,1) }
+}
+
+/* Subject-Specific Colors */
+.chemistry-theme {
+  --primary: #9C27B0;
+  --secondary: #E91E63;
+}
+
+.physics-theme {
+  --primary: #3F51B5;
+  --secondary: #00BCD4;
+}
+
+.math-theme {
+  --primary: #FF5722;
+  --secondary: #FFC107;
+}
+
+/* Decorative Elements */
+.decorative-corner {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: url('data:image/svg+xml;utf8,<svg>...</svg>');
+  opacity: 0.2;
+}
+
+/* Floating Elements Animation */
+.animation-delay-100 {
+    animation-delay: 0.1s;
+}
+.animation-delay-300 {
+    animation-delay: 0.3s;
+}
+.animation-delay-500 {
+    animation-delay: 0.5s;
+}
+.animation-delay-700 {
+    animation-delay: 0.7s;
+}
+
+/* Dark Mode Styles */
+.dark {
+    --text: #F7FAFC;
+    --background: #1A202C;
+    --card-bg: #2D3748;
+}
+
+.dark body {
+    background-color: var(--background);
+    color: var(--text);
+}
+
+.dark .bg-white {
+    background-color: var(--card-bg);
+}
+
+.dark .text-gray-600 {
+    color: #CBD5E0;
+}
+
+.dark .bg-gray-100 {
+    background-color: #1A202C;
+}
+
+.dark .progress-indicator {
+    background-color: var(--card-bg);
+    color: var(--text);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .vibrant-bg {
+    animation: none;
+    background: var(--primary);
+  }
+}
